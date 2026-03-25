@@ -70,7 +70,7 @@ Have it ready but **do not start it yet**.
 ![Select Open HRV reading](docs/screenshots/EliteHRV2.PNG)
 
 **2c.** On the Open HRV Reading screen:
-- Set **Time limitation** to **15:00** (15 minutes)
+- Leave **Time limitation** toggled **off** — the app caps it at 5:59, so you need an open-ended session to run the full 15 minutes
 - Set **Position** to **Sitting**
 - Leave all other toggles off (Respiration tracking, Breathing Pattern, etc.)
 - Make sure your heart rate monitor is connected (shown at the top of the screen)
