@@ -63,11 +63,11 @@ Have it ready but **do not start it yet**.
 
 **2a.** Open EliteHRV. On the home screen, tap the **+** button at the bottom of the screen.
 
-![EliteHRV home screen](docs/screenshots/EliteHRV1.PNG)
+<img src="docs/screenshots/EliteHRV1.PNG" width="250">
 
 **2b.** You will see three reading types. Select **Open HRV reading**.
 
-![Select Open HRV reading](docs/screenshots/EliteHRV2.PNG)
+<img src="docs/screenshots/EliteHRV2.PNG" width="250">
 
 **2c.** On the Open HRV Reading screen:
 - Leave **Time limitation** toggled **off** — the app caps it at 5:59, so you need an open-ended session to run the full 15 minutes. If you'd prefer the session to stop automatically, use the **Resonance** or **Custom Breathing** mode instead and set a 15-minute timer there — just ignore the app's breathing instructions and follow the breath.cafe pacer as normal
@@ -75,7 +75,7 @@ Have it ready but **do not start it yet**.
 - Leave all other toggles off (Respiration tracking, Breathing Pattern, etc.)
 - Make sure your heart rate monitor is connected (shown at the top of the screen)
 
-![Open HRV Reading settings](docs/screenshots/EliteHRV3.PNG)
+<img src="docs/screenshots/EliteHRV3.PNG" width="250">
 
 **2d.** **Start the breath.cafe pacer and tap TAKE TEST at the same moment.** This synchronisation is the key step — the converter uses the pacer's known protocol schedule to reconstruct the respiration waveform, aligned from the start of the recording.
 
@@ -87,7 +87,7 @@ Breathe for the full 15 minutes following the pacer, then let the session end na
 
 **3a.** From the home screen, tap your profile icon (top right corner). Then tap **Export data**.
 
-![Profile screen with Export data](docs/screenshots/EliteHRV4.PNG)
+<img src="docs/screenshots/EliteHRV4.PNG" width="250">
 
 **3b.** EliteHRV will export **all of your previous readings** as a collection of files. Each reading is saved as a separate `.txt` file named with its date and time.
 
