@@ -13,8 +13,8 @@ CLAUDE.md
 # Research papers (cite via DOI instead)
 *.pdf
 
-# Windows binaries
-*.exe
+# Third-party installers
+Microsoft Chart Controls*.exe
 
 # Python artifacts
 __pycache__/

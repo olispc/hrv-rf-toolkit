@@ -210,9 +210,12 @@ python hrvisualizer.py path/to/session.txt
 
 ### Original Windows app
 
-The original compiled Windows app is in `Nexus/Nexus/bin/`. Double-click `Nexus.exe` to launch, then **drag and drop your `.txt` file onto the window**.
+The compiled Windows app is in `Nexus/Nexus/bin/x86/Release/`. Double-click `HRVisualizer.exe` to launch, then **drag and drop your `.txt` file onto the window**.
 
-To build from source: open `Nexus/Nexus.sln` in Visual Studio. Requires .NET Framework and Microsoft Chart Controls for .NET 3.5 (free download from Microsoft).
+**Requirement:** Microsoft Chart Controls for .NET 3.5 must be installed for the app to run. The full original download (including this installer) is available from the original source:
+[breath.cafe/HRVISUALIZER_WITH_SOURCE_CODE.ZIP](https://breath.cafe/HRVISUALIZER_WITH_SOURCE_CODE.ZIP)
+
+To build from source: open `Nexus/Nexus.sln` in Visual Studio.
 
 ---
 
