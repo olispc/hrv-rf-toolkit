@@ -71,7 +71,7 @@ Have it ready but **do not start it yet**.
 
 **2c.** On the Open HRV Reading screen:
 - Leave **Time limitation** toggled **off** — the app caps it at 5:59, so you need an open-ended session to run the full 15 minutes. If you'd prefer the session to stop automatically, use the **Resonance** or **Custom Breathing** mode instead and set a 15-minute timer there — just ignore the app's breathing instructions and follow the breath.cafe pacer as normal
-- Set **Position** to **Sitting**
+- **Position** is **sitting** as default - has no bearing on the reading, although a good idea to do the protocol sitting!
 - Leave all other toggles off (Respiration tracking, Breathing Pattern, etc.)
 - Make sure your heart rate monitor is connected (shown at the top of the screen)
 
