@@ -38,50 +38,79 @@ Both routes produce a HRVisualizer-compatible `.txt` file. RF is read from the r
 
 ## Route A: EliteHRV + breath.cafe → HRVisualizer
 
-Use this route when you want to use your phone and a familiar HRV app, or don't have your laptop available during a session.
+Use this route when you only have a phone and a heart rate monitor — no laptop needed during the session. You can even send your export file to someone else for processing.
 
 > **Note:** Route B (EBYT) is more accurate — it records your actual breathing via the Polar H10 accelerometer, and timing is handled automatically. Route A reconstructs a synthetic respiration waveform from the protocol schedule, which is sufficient for reading your RF peak but less precise.
 
 ### Overview
 
-1. Record HRV with the **EliteHRV** app while following the **breath.cafe** pacer
-2. Export the RR interval file from EliteHRV
-3. Run the converter to produce a HRVisualizer file
-4. Open in HRVisualizer to read your RF
+1. Open the breath.cafe pacer in a browser
+2. Record a 15-minute session in EliteHRV, starting both at the same moment
+3. Export your data from EliteHRV and identify the right file
+4. Run the converter to produce a HRVisualizer file
+
+---
 
 ### Step 1 — Open the breath.cafe pacer
 
-Open [https://breath.cafe/](https://breath.cafe/) in a browser, or open `breath_cafe_research_protocol.html` locally for the full automated Fisher–Lehrer sweep (6.75 → 4.25 bpm).
+Open [https://breath.cafe/](https://breath.cafe/) in a browser on any device, or open `breath_cafe_research_protocol.html` locally for the full automated Fisher–Lehrer sweep (6.75 → 4.25 bpm).
 
-Have it ready but **do not start yet**.
+Have it ready but **do not start it yet**.
 
-### Step 2 — Record with EliteHRV
+---
 
-1. Open the **EliteHRV** app on your phone and start a new session in Free Mode (not their scored protocol).
-2. Connect your HRM (Polar H10 recommended — wrist PPG devices are noisier and can shift the apparent RF).
-3. **Start EliteHRV and the breath.cafe pacer at the same moment.** This synchronisation is the key step — the converter uses the pacer's known protocol schedule to reconstruct the respiration waveform, aligned to your start time.
-4. Breathe for 15 minutes following the pacer.
-5. Stop both EliteHRV and the pacer at the same time. 
+### Step 2 — Start a recording in EliteHRV
 
-### Step 3 — Export RR intervals from EliteHRV
+**2a.** Open EliteHRV. On the home screen, tap the **+** button at the bottom of the screen.
 
-- Go to the session → Share → Export RR Intervals
-- This produces a plain text file with one RR interval per line in milliseconds:
-  ```
-  802
-  834
-  628
-  ```
+![EliteHRV home screen](docs/screenshots/EliteHRV1.PNG)
+
+**2b.** You will see three reading types. Select **Open HRV reading**.
+
+![Select Open HRV reading](docs/screenshots/EliteHRV2.PNG)
+
+**2c.** On the Open HRV Reading screen:
+- Set **Time limitation** to **15:00** (15 minutes)
+- Set **Position** to **Sitting**
+- Leave all other toggles off (Respiration tracking, Breathing Pattern, etc.)
+- Make sure your heart rate monitor is connected (shown at the top of the screen)
+
+![Open HRV Reading settings](docs/screenshots/EliteHRV3.PNG)
+
+**2d.** **Start the breath.cafe pacer and tap TAKE TEST at the same moment.** This synchronisation is the key step — the converter uses the pacer's known protocol schedule to reconstruct the respiration waveform, aligned from the start of the recording.
+
+Breathe for the full 15 minutes following the pacer, then let the session end naturally.
+
+---
+
+### Step 3 — Export your data from EliteHRV
+
+**3a.** From the home screen, tap your profile icon (top right corner). Then tap **Export data**.
+
+![Profile screen with Export data](docs/screenshots/EliteHRV4.PNG)
+
+**3b.** EliteHRV will export **all of your previous readings** as a collection of files. Each reading is saved as a separate `.txt` file named with its date and time.
+
+**Find the file that matches your 15-minute session** — it will be named something like:
+```
+2026-03-25 20-30-00.txt
+```
+
+Send that file (and only that file) for processing.
+
+---
 
 ### Step 4 — Convert to HRVisualizer format
 
 ```bash
-python3 quick_rf_test.py "my_session_rr.txt"
+python3 quick_rf_test.py "2026-03-25 20-30-00.txt"
 ```
 
-That's it. The script generates the Fisher–Lehrer breath schedule automatically and writes the output as `rf_test_YYYYMMDD_HHMMSS.txt` in the current directory.
+The script generates the Fisher–Lehrer breath schedule automatically and writes the output as `rf_test_YYYYMMDD_HHMMSS.txt` in the current directory.
 
 `elitehrv_to_hrvisualizer.py` is a more flexible version if you need to specify a custom breath schedule, output filename, or start time — but for a standard 15-minute Fisher–Lehrer session `quick_rf_test.py` is all you need.
+
+---
 
 ### Step 5 — Open in HRVisualizer
 
